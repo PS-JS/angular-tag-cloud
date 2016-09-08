@@ -24,8 +24,8 @@ ngTagCloud.directive("ngTagCloud",["$timeout","$log",function($timeout,$log){
            cloudData: '='
        },
        template: "<div id='ng-tag-cloud' class='ng-tag-cloud'></div>",
-       controller: function($scope,$element){
-       },
+       controller: ['$scope','$element',function($scope,$element){
+       }],
        link: function($scope,element,attrs){
            
            if($scope.cloudData === "" || $scope.cloudData === undefined){
@@ -275,3 +275,5 @@ ngTagCloud.directive("ngTagCloud",["$timeout","$log",function($timeout,$log){
        replace: true
    } 
 }]);
+
+module.exports = ngTagCloud;
