@@ -165,6 +165,10 @@ ngTagCloud.directive("ngTagCloud",["$timeout","$log",function($timeout,$log){
                     // If there's no link attribute
                     word_span.appendChild(textNode);
                 }
+
+                  if (word.click !== undefined && typeof word.click === "function") {
+                      word_span.onclick = word.click;
+                  }
                   
 
                 // Bind handlers to words (though not really useful in this version!)
